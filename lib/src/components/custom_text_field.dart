@@ -4,9 +4,9 @@ class CustomTextField extends StatefulWidget {
   final String label;
   final IconData icon;
   final bool isSecret;
-   bool isObscure = true;
 
-    CustomTextField
+
+  const CustomTextField
   ({super.key,required this.icon,required this.label,
     this.isSecret = false,
   });
@@ -17,13 +17,14 @@ class CustomTextField extends StatefulWidget {
 
 class _CustomTextFieldState extends State<CustomTextField> {
 
+bool isObscure = false;
 late bool obscure;
 
 @override
   void initState(){
     super.initState();
 
-    obscure = widget.isObscure;
+    obscure = isObscure;
   }
   
   @override
